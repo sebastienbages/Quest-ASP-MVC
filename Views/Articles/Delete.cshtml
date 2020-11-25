@@ -1,0 +1,42 @@
+﻿@model QuestAspMvc.Models.Article
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Supprimer un article</h2>
+
+<h4>Etes-vous sûr de vouloir supprimer cet article ?</h4>
+<div>
+    @*<h4>Article</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Title)*@
+            Nom de l'article :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Description)*@
+            Description :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    @Html.ActionLink("<Retour à la liste", "Index") |
+    <input type="submit" value="Supprimer" class="btn btn-default" />
+</div>
+    }
+</div>

@@ -1,0 +1,35 @@
+﻿@model QuestAspMvc.Models.Article
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="text-center">Détails de votre article</h2>
+
+<div>
+    <div class="text-center">
+        <img src="@Html.DisplayFor(model => model.ImageLink)" class="img-item"/>
+    </div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nom de l'article :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            Description :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("< Retour à la liste", "Index") |
+    @Html.ActionLink("Editer", "Edit", new { id = Model.ID })
+</p>
